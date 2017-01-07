@@ -18,7 +18,7 @@ function MicrowaveFood(base64, callback){
     // Upload image
     var self = this;
     $.ajax({
-        url:"access_point.php?action=upload_image",
+        url:"../api/access_point.php?action=upload_image",
         data:{
             file:base64
         },
