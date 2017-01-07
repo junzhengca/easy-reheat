@@ -87,4 +87,4 @@ if __name__ == '__main__':
     r = f.check_food()
 
     for i in r:
-        print(item, r[item])
+        print(i, r[i])

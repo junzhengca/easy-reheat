@@ -34,6 +34,8 @@
         $targetDir = "images/";
         $targetFile = gen_uuid();
         if(base64_to_image($_POST["file"], $targetDir . $targetFile)){
+            $res = exec("python3 ../checking.py " . $targetDir . $targetFile);
+            echo $res;
             echo $targetDir . $targetFile;
         } else {
             echo "500";
