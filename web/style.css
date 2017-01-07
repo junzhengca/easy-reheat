@@ -1,0 +1,24 @@
+p{
+  font-size: 5vh;
+}
+
+#container{
+  height:100vh;
+  width: 100%;
+  padding: 0px;
+}
+
+#content{
+  height:100%;
+  background-color: #FFB22E;
+  color: white;
+  text-align: center;
+}
+
+#block1{
+  height:25vh;
+}
+
+.button{
+  font-size: 30vh;
+}
