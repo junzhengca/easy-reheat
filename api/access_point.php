@@ -26,16 +26,19 @@
         }
     }
 
-    switch($_GET["action"]){
-        // Upload image using base64
-        case "upload_image":
-            $targetDir = "images/";
-            $targetFile = gen_uuid();
-            if(base64_to_image($_POST["file"], $targetDir . $targetFile)){
-                echo json_encode(array("status"=>"ok", "url"=>$targetDir . $targetFile));
-            } else {
-                echo json_encode(array("status"=>"error"));
-            }
-        break;
-    }
+    include "include/app.php";
+
+    $app = new App();
+
+    $app->add("upload_image", function(){
+        $targetDir = "images/";
+        $targetFile = gen_uuid();
+        if(base64_to_image($_POST["file"], $targetDir . $targetFile)){
+            echo $targetDir . $targetFile;
+        } else {
+            echo "500";
+        }
+    });
+
+    $app->route($_GET["action"]);
 ?>
