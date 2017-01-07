@@ -3,6 +3,9 @@ function upload(){
 }
 
 function test(){
+  // get rid of old page content
+  document.getElementById("block2").style.display = "none";
+
   // send the image to the server when the user inputs a file
   image_to_base64("input", function(base64){
 
@@ -23,4 +26,5 @@ function test(){
     });
 
   });
+
 }

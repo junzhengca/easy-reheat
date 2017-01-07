@@ -32,5 +32,10 @@ p{
 }
 
 .button:hover{
-  color: #85ebf7;
+  color: #DDDDDD;
+}
+
+.button:active{
+  color: #BBBBBB;
+  font-size:31vh;
 }
