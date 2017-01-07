@@ -13,7 +13,7 @@ function test(){
 
       if(food !== false){
         new_html = "Microwave Time: " + food.how_long().toString() + "\n" +
-              "Cal: " + food.how_much_cal().toString());
+              "Cal: " + food.how_much_cal().toString();
       } else {
         new_html = "Failed to upload image";
       }
