@@ -40,5 +40,13 @@
         }
     });
 
+    $app->add("score_image", function(){
+
+    });
+
+    $app->add("food_info", function(){
+
+    });
+
     $app->route($_GET["action"]);
 ?>
