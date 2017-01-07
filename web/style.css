@@ -19,6 +19,14 @@ p{
   height:25vh;
 }
 
+#block3{
+  
+}
+
+#input{
+  display:none;
+}
+
 .button{
   font-size: 30vh;
 }

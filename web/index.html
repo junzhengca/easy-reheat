@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="style.css">
     <title>MICROWAVE</title>
 
+    <script src="https://ssl.jackzh.com/file/js/jquery/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="sdk.js"></script>
     <script type="text/javascript" src="index.js"></script>
   </head>
 
   <body class="container" id="container">
+    <input id="input" type="file" onchange="test()"/>
     <div class="col-md-3" id="empty"></div>
     <div class="col-md-6" id="content">
       <div id="block1"></div>
       <div id="block2">
-        <i class="fa fa-arrow-circle-up icon-large button" aria-hidden="true" onclick="test()"></i>
+        <i class="fa fa-arrow-circle-up icon-large button" aria-hidden="true" onclick="upload()"></i>
         <p>Upload a picture of your food</p>
       </div>
-      <div></div>
+      <div id="block3"></div>
     </div>
     <div class="col-md-3" id="empty"></div>
   </body>
