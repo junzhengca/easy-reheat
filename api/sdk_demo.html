@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Microwave Time SDK Demo</title>
+        <script src="https://ssl.jackzh.com/file/js/jquery/jquery-2.2.2.min.js"></script>
+        <script src="sdk.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <input id="input-file" type="file" />
+        <button onclick="check();">Check</button>
+    </body>
+</html>
+<script>
+    function check(){
+        image_to_base64("input-file",function(base64){
+            //alert(base64);
+            food = new MicrowaveFood(base64, function(food){
+                if(food !== false){
+                    alert("Microwave Time: " + food.how_long().toString() + "\n" +
+                          "Cal: " + food.how_much_cal().toString());
+                } else {
+                    alert("Failed to upload image");
+                }
+            });
+        });
+    }
+</script>
