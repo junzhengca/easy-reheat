@@ -20,7 +20,7 @@ p{
 }
 
 #block3{
-  
+
 }
 
 #input{
@@ -29,4 +29,8 @@ p{
 
 .button{
   font-size: 30vh;
+}
+
+.button:hover{
+  color: #85ebf7;
 }
