@@ -1,3 +1,4 @@
+// A class representing food
 function MicrowaveFood(base64, callback){
     // Get microwave time
     this.how_long = function(){
@@ -7,6 +8,11 @@ function MicrowaveFood(base64, callback){
     // Get cal count
     this.how_much_cal = function(){
         return 1000;
+    }
+
+    // Is is food microwaveable
+    this.microwaveable = function(){
+        return true;
     }
 
     // Upload image
