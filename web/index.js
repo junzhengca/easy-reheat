@@ -45,16 +45,16 @@ function change(){
     }, 500);
 }
 
-function feedback(){
+function feedback(action){
     alert("Thanks for your feedback!");
-    if(1){
+    if(action === 1){
         $.ajax({
             url:"../api/access_point.php?action=train&uuid=" + img_uuid + "&method=down",
             type:"GET",
             success:function(){window.location.reload();},
             error:function(){window.location.reload();console.log("failed to train");}
         });
-    } else if (3){
+    } else if (action === 3){
         $.ajax({
             url:"../api/access_point.php?action=train&uuid=" + img_uuid + "&method=up",
             type:"GET",
