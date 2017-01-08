@@ -1,5 +1,5 @@
 import os
-os.environ["HOME"] = "/"
+os.environ["HOME"] = "/root"
 """
 Microwave-time
 
