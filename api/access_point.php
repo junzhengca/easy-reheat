@@ -47,7 +47,7 @@
             for ($i = 1; $i <= max(array_keys($res)); $i++){
                 array_push($json["score"], $arr=preg_split("/\s+(?=\S*+$)/",$str));
             }
-            file_put_contents($targetDir . $targetFile . ".json");
+            file_put_contents($targetDir . $targetFile . ".json", json_encode($json));
         } else {
             echo "500";
         }
