@@ -21,7 +21,7 @@ function change(){
                         for (i=0; i<data.score.length; i++){
                             new_html += "<span class='label label-default'>" + data.score[i][0] + "</span>"
                         }
-                        new_html += "<br><br><span class='mic-time'>Microwave Time: " + data.total_cook_time + " Seconds.</span><br>" + "Calories: " + data.total_cook_time;
+                        new_html += "<br><br><span class='mic-time'>Microwave Time: " + data.total_cook_time + " Seconds.</span><br>" + "Calories: " + data.total_cal;
                         document.getElementById("block3").innerHTML = new_html;
                     });
                 } else {
