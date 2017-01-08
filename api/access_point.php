@@ -65,7 +65,7 @@
                     $total_time += $food_cook_times[$food[0]] * $food[1];
                 }
                 if(empty($food_cal[$food[0]])){
-                    $total_cal += 90;
+                    $total_cal += 500;
                 } else {
                     $total_cal += $food_cal[$food[0]] * $food[1];
                 }
