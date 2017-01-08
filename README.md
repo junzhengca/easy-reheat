@@ -3,4 +3,4 @@ EasyReheat will tell you exactly how long the food needs to be microwaved. It us
 
 You can checkout EasyReheat at [easyreheat.com](http://easyreheat.com). Proudly powered by Microsoft Azure.
 
-EasyReheat is also avaliable via Azuer Bot Service.
+EasyReheat is also avaliable via Azure Bot Service.
