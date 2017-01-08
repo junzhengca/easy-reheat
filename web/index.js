@@ -31,7 +31,7 @@ function change(){
                             new_html += "<span class='label label-default'>" + data.score[i][0] + "</span>"
                         }
                         new_html += "<br><br><div class='row'><div class='col-md-4'><button onclick='feedback(1);' class='vote-button'><i class='fa fa-snowflake-o' aria-hidden='true'></i> Too Cold</button></div>"
-                        new_html += "<div class='col-md-4'><button onclick='feedback(2);' class='vote-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i> Perfact</button></div>"
+                        new_html += "<div class='col-md-4'><button onclick='feedback(2);' class='vote-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i> Perfect</button></div>"
                         new_html += "<div class='col-md-4'><button onclick='feedback(3);' class='vote-button'><i class='fa fa-fire' aria-hidden='true'></i> Too Hot</button></div></div>"
                         document.getElementById("block3").innerHTML = new_html;
                     });
