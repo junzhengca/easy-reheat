@@ -83,6 +83,7 @@
             // Parse python output to json object
             $res = explode("\n", $res);
             $json = array();
+            $json["score"] = array();
             for ($i = 1; $i <= max(array_keys($res)); $i++){
                 if($res[$i] == ""){
                     continue;
