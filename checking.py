@@ -89,4 +89,4 @@ if __name__ == '__main__':
     r = f.check_food()
 
     for i in r:
-        print(i + "/" + r[i])
+        print(i + "/" + str(r[i]))
