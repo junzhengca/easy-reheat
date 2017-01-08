@@ -38,13 +38,13 @@ times = []
 
 for next_food in new_food_list:
     if next_food in red_meat_list:
-        times.append(60) 
+        times.append(60)
     elif next_food in green_vegtables_list:
-        times.append(30) 
+        times.append(30)
     elif next_food in grains_list:
-        times.append(40) 
+        times.append(40)
     elif next_food in fruits_list:
-        times.append(20) 
+        times.append(20)
     elif next_food in drinks_list:
             times.append(20)
     elif next_food in roots_vegtables_list:

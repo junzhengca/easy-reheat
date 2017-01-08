@@ -1,6 +1,7 @@
 <?php
-//http://localhost/usb/microwave-time/api/?action=upload_image
-    // error_reporting(E_ALL);
+    // Include dependencies
+    include "include/app.php";
+    include "config.php";
 
     // Helper function to generate a v4 UUID
     function gen_uuid() {
@@ -26,11 +27,10 @@
         }
     }
 
-    include "include/app.php";
-    include "config.php";
-
+    // Create a new app instance
     $app = new App();
 
+    // Upload image and score it
     $app->add("upload_image", function(){
         $targetDir = "images/";
         $targetFile = gen_uuid();
@@ -41,6 +41,7 @@
             // Parse python output to json object
             $res = explode("\n", $res);
             $json = array();
+            // Check if food is microwaveable
             if($res[0] == "0"){
                 $json["warning"] = false;
             } else {
@@ -54,6 +55,7 @@
                 $arr = explode("/",$res[$i]);
                 array_push($json["score"], $arr);
             }
+            // Calculate cook time and calorie count
             $food_cook_times = json_decode(file_get_contents("food_cook_time.json"),true);
             $food_cal = json_decode(file_get_contents("food_cal.json"),true);
             $total_time = 0;
@@ -70,14 +72,17 @@
                     $total_cal += $food_cal[$food[0]] * $food[1];
                 }
             }
+            // Calculate average
             $json["total_cook_time"] = floor($total_time / (max(array_keys($json["score"])) + 1));
             $json["total_cal"] = floor($total_cal / (max(array_keys($json["score"])) + 1));
+            // Save json to file
             file_put_contents($targetDir . $targetFile . ".json", json_encode($json));
         } else {
             echo "500";
         }
     });
 
+    // Score an image, output cook time
     $app->add("score_image", function(){
             $res = shell_exec($config["python_path"] . " ../checking.py '" . $_GET["url"] . "' 2>&1");
             // Parse python output to json object
@@ -112,6 +117,7 @@
             echo $json["total_cook_time"];
     });
 
+    // Check if food is microwaveable
     $app->add("microwaveable", function(){
         $res = shell_exec($config["python_path"] . " ../checking.py '" . $_GET["url"] . "' 2>&1");
         // Parse python output to json object

@@ -9,7 +9,7 @@
                 echo "404";
             });
         }
-        
+
         function add($name, $func){
             $this->routes[$name] = $func;
         }
