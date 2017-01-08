@@ -78,13 +78,14 @@ p{
 
 .vote-button {
     border-radius:100px;
-    width:80%;
+    width:70%;
     color:white;
     background-color: rgba(0,0,0,0.2);
     height:100px;
     border:none;
     box-shadow: rgba(0,0,0,0.3) 0 0 10px;
     transition: all ease 0.3s;
+    margin:20px;
 }
 
 .vote-button:hover {

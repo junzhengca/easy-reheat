@@ -38,3 +38,10 @@ function change(){
         });
     }, 500);
 }
+
+$(function(){
+    $(".vote-button").click(function(){
+        alert("Thanks for your feedback!");
+        window.location.reload();
+    });
+})
