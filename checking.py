@@ -1,3 +1,5 @@
+import os
+os.environ["HOME"] = "/root"
 """
 Microwave-time
 
@@ -38,7 +40,7 @@ class Food:
         @type self: Food
         @rtype: bool
         """
-        app = ClarifaiApp()
+        app = ClarifaiApp("Hr3f_TNV3d26DFexmloW62wVwZc2Cc4MoTkN7d7P", "vqmlJn5xUE1ZhmDcyw9nrDNMqTNq7NKrgue9YPxm")
         general = app.models.get('general-v1.3')
         image = ClImage(url=self.url_address)
 
@@ -62,7 +64,7 @@ class Food:
         @type self: Food
         @rtype: dict
         """
-        app = ClarifaiApp()
+        app = ClarifaiApp("Hr3f_TNV3d26DFexmloW62wVwZc2Cc4MoTkN7d7P", "vqmlJn5xUE1ZhmDcyw9nrDNMqTNq7NKrgue9YPxm")
         fod = app.models.get('food-items-v1.0')
         image = ClImage(url=self.url_address)
 
@@ -87,4 +89,4 @@ if __name__ == '__main__':
     r = f.check_food()
 
     for i in r:
-        print(item, r[item])
+        print(i + "/" + str(r[i]))

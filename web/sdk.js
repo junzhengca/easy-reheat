@@ -15,6 +15,21 @@ function MicrowaveFood(base64, callback){
         return true;
     }
 
+    this.get_tags = function(callback){
+        var self = this;
+        $.ajax({
+            url:"../api/images/" + self.img_url + ".json",
+            dataType:"json",
+            type:"GET",
+            success:function(data){
+                callback(data.score);
+            },
+            error:function(data){
+                callback(false);
+            }
+        });
+    }
+
     // Upload image
     var self = this;
     $.ajax({
@@ -24,7 +39,7 @@ function MicrowaveFood(base64, callback){
         },
         type:"POST",
         success:function(data){
-            this.img_url = data;
+            self.img_url = data;
             callback(self);
         },
         error:function(data){

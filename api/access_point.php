@@ -21,7 +21,7 @@
             fwrite($ifp, base64_decode($data[1]));
             fclose($ifp);
             return true;
-            } else {
+        } else {
             return false;
         }
     }
@@ -34,7 +34,24 @@
         $targetDir = "images/";
         $targetFile = gen_uuid();
         if(base64_to_image($_POST["file"], $targetDir . $targetFile)){
-            echo $targetDir . $targetFile;
+            $res = shell_exec("/usr/bin/python3 ../checking.py 'http://52.229.117.35/microwave-time/api/" . $targetDir . $targetFile . "' 2>&1");
+            echo $targetFile;
+            $res = explode("\n", $res);
+            $json = array();
+            if($res[0] == "0"){
+                $json["warning"] = false;
+            } else {
+                $json["warning"] = true;
+            }
+            $json["score"] = array();
+            for ($i = 1; $i <= max(array_keys($res)); $i++){
+                if($res[$i] == ""){
+                    continue;
+                }
+                $arr = explode("/",$res[$i]);
+                array_push($json["score"], $arr);
+            }
+            file_put_contents($targetDir . $targetFile . ".json", json_encode($json));
         } else {
             echo "500";
         }
