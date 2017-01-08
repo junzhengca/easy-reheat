@@ -34,7 +34,7 @@
         $targetDir = "images/";
         $targetFile = gen_uuid();
         if(base64_to_image($_POST["file"], $targetDir . $targetFile)){
-            $res = shell_exec("python3 ../checking.py 'http://52.229.117.35/microwave-time/api/" . $targetDir . $targetFile . "'");
+            $res = shell_exec("python3 ../checking.py 'http://52.229.117.35/microwave-time/api/" . $targetDir . $targetFile . "' 2>&1");
             echo $res;
             echo $targetDir . $targetFile;
         } else {
