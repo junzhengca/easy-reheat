@@ -27,6 +27,7 @@
     }
 
     include "include/app.php";
+    include "config.php";
 
     $app = new App();
 
