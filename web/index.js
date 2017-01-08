@@ -20,7 +20,7 @@ function change(){
                         for (i=0; i<tags.length; i++){
                             new_html += "<span class='label label-default'>" + tags[i][0] + "</span>"
                         }
-                        new_html += "Microwave Time: " + food.how_long().toString() + "<br>" + "Cal: " + food.how_much_cal().toString();
+                        new_html += "<br><br>Microwave Time: " + food.how_long().toString() + "<br>" + "Cal: " + food.how_much_cal().toString();
                         document.getElementById("block3").innerHTML = new_html;
                     });
                 } else {
