@@ -75,3 +75,8 @@ p{
 .mic-time {
     font-size:7vh;
 }
+
+#block3 img {
+    max-width: 75vw;
+    max-height:75vh;
+}
