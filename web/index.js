@@ -8,7 +8,7 @@ function test(){
 
   // send the image to the server when the user inputs a file
   image_to_base64("input", function(base64){
-
+      console.log(base64);
     // process the server response and display it
     food = new MicrowaveFood(base64, function(food){
 
