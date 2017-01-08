@@ -6,17 +6,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.css">
     <link rel="stylesheet" href="style.css">
-    <title>MICROWAVE</title>
+    <title>Microwave Time</title>
 
     <script src="https://ssl.jackzh.com/file/js/jquery/jquery-2.2.2.min.js"></script>
     <script type="text/javascript" src="sdk.js"></script>
     <script type="text/javascript" src="index.js"></script>
   </head>
 
-  <body class="container" id="container">
+  <body class="container-fluid" id="container">
     <input id="input" type="file" onchange="change()" capture="camera" accept="image/*" capture>
-    <div class="col-md-3 col-xs-0" id="empty"></div>
-    <div class="col-md-6 col-xs-12" id="content">
+    <div id="content">
       <div id="block1"></div>
       <div id="block2">
         <i class="fa fa-arrow-circle-up icon-large button" aria-hidden="true" onclick="upload()"></i>
@@ -24,7 +23,6 @@
       </div>
       <div id="block3"></div>
     </div>
-    <div class="col-md-3 col-xs-0" id="empty"></div>
   </body>
 
   <footer>

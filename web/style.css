@@ -10,9 +10,13 @@ p{
 
 #content{
   height:100%;
-  background-color: #FFB22E;
+  background-color: #FF9800;
   color: white;
   text-align: center;
+  background-image: url(images/microwave.png);
+  background-size: 70vh;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #block1{
@@ -24,7 +28,7 @@ p{
 }
 
 #block3{
-
+    font-size: 30px;
 }
 
 #input{
@@ -33,6 +37,7 @@ p{
 
 .button{
   font-size: 30vh;
+  text-shadow: rgba(0,0,0,0.2) 0 0 20px;
 }
 
 .button:hover{

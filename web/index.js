@@ -15,16 +15,22 @@ function change(){
       // process the server response and display it
       food = new MicrowaveFood(base64, function(food){
 
-        new_html="";
+        food.get_tags(function(tags){
+            new_html="";
 
-        if(food !== false){
-          new_html = "Microwave Time: " + food.how_long().toString() + "\n" +
-                "Cal: " + food.how_much_cal().toString();
-        } else {
-          new_html = "Failed to upload image";
-        }
+            if(food !== false){
+                new_html = "Based on our sophisticated scientific algorithm, your dish may contain ...<br>";
+                for (i=0; i<tags.length; i++){
+                    new_html += "<span class='label label-default'>" + tags[i][0] + "</span>"
+                }
+                new_html += "Microwave Time: " + food.how_long().toString() + "<br>" +
+                    "Cal: " + food.how_much_cal().toString();
+            } else {
+              new_html = "Failed to upload image";
+            }
 
-        document.getElementById("block3").innerHTML = new_html;
+            document.getElementById("block3").innerHTML = new_html;
+        });
 
       });
 
