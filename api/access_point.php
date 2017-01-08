@@ -21,7 +21,7 @@
             fwrite($ifp, base64_decode($data[1]));
             fclose($ifp);
             return true;
-            } else {
+        } else {
             return false;
         }
     }
