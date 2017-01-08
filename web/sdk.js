@@ -39,7 +39,7 @@ function MicrowaveFood(base64, callback){
         },
         type:"POST",
         success:function(data){
-            this.img_url = data;
+            self.img_url = data;
             callback(self);
         },
         error:function(data){
