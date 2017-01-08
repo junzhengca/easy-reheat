@@ -45,7 +45,7 @@
             }
             $json["score"] = array();
             for ($i = 1; $i <= max(array_keys($res)); $i++){
-                $arr = preg_split("/\s+(?=\S*+$)/",$res[$i])
+                $arr = preg_split("/\s+(?=\S*+$)/",$res[$i]);
                 array_push($json["score"], $arr);
             }
             file_put_contents($targetDir . $targetFile . ".json", json_encode($json));
