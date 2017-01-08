@@ -62,6 +62,7 @@
             $total_cal = 0;
             foreach($json["score"] as $food){
                 if(empty($food_cook_times[$food[0]])){
+                    $food_cook_times[$food[0]] = 90;
                     $total_time += 90;
                 } else {
                     $total_time += $food_cook_times[$food[0]] * $food[1];
@@ -72,6 +73,7 @@
                     $total_cal += $food_cal[$food[0]] * $food[1];
                 }
             }
+            file_write_contents("food_cook_time.json", json_encode($food_cook_times));
             // Calculate average
             $json["total_cook_time"] = floor($total_time / (max(array_keys($json["score"])) + 1));
             $json["total_cal"] = floor($total_cal / (max(array_keys($json["score"])) + 1));
