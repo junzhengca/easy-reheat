@@ -1,18 +1,19 @@
 import os
-os.environ["HOME"] = "/root"
-"""
-Microwave-time
 
-Receive a URL of a picture from back-end, return what kind of
-food is in the pic
-"""
 import sys
 from clarifai.rest import ClarifaiApp
 from clarifai.rest import Image as ClImage
 warning_item = ['recycling', 'bag', 'trash', 'garbage',
            'kitchenware', 'knife', 'steel',
            'stainless steel', 'fork', 'spoon']
+os.environ["HOME"] = "/root"
 
+"""
+Microwave-time
+
+Receive a URL of a picture from back-end, return what kind of
+food is in the pic
+"""
 
 class Food:
     """
