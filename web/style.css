@@ -17,6 +17,13 @@ p{
   background-size: 70vh;
   background-position: center;
   background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.label-default {
+    display: inline-block;
+    margin: 5px;
+    background-color: rgba(0,0,0,0.5);
 }
 
 #block1{
