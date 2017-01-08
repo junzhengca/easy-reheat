@@ -114,7 +114,7 @@
             }
             $json["total_cook_time"] = floor($total_time / (max(array_keys($json["score"])) + 1));
             $json["total_cal"] = floor($total_cal / (max(array_keys($json["score"])) + 1));
-            echo json_encode($json);
+            echo $json["total_cook_time"];
     });
 
     $app->add("food_info", function(){
