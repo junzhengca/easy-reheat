@@ -10,6 +10,21 @@ function MicrowaveFood(base64, callback){
         return 1000;
     }
 
+    // Get tags
+    this.get_tags = function(callback){
+        $.ajax({
+            url:"../api/images/" + this.image_url,
+            type:"GET",
+            dataType:"json"
+            success:function(data){
+                callback(data.score);
+            },
+            error:function(data){
+                callback(false);
+            }
+        });
+    }
+
     // Is is food microwaveable
     this.microwaveable = function(){
         return true;
