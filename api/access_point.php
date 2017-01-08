@@ -63,7 +63,7 @@
                     $total_time += $food_cook_times[$food[0]] * $food[1];
                 }
             }
-            $json["total_cook_time"] = $total_time;
+            $json["total_cook_time"] = $total_time / (max(array_keys($json["score"])) + 1);
             file_put_contents($targetDir . $targetFile . ".json", json_encode($json));
         } else {
             echo "500";
