@@ -17,6 +17,7 @@ function MicrowaveFood(base64, callback){
 
     // Get all tags for current food
     this.get_tags = function(callback){
+        console.log(this);
         var self = this;
         $.ajax({
             url:"../api/images/" + self.img_url + ".json",
