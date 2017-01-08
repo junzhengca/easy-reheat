@@ -83,12 +83,6 @@
             // Parse python output to json object
             $res = explode("\n", $res);
             $json = array();
-            if($res[0] == "0"){
-                $json["warning"] = false;
-            } else {
-                $json["warning"] = true;
-            }
-            $json["score"] = array();
             for ($i = 1; $i <= max(array_keys($res)); $i++){
                 if($res[$i] == ""){
                     continue;
@@ -117,8 +111,16 @@
             echo $json["total_cook_time"];
     });
 
-    $app->add("food_info", function(){
-
+    $app->add("microwaveable", function(){
+        $res = shell_exec($config["python_path"] . " ../checking.py '" . $_GET["url"] . "' 2>&1");
+        // Parse python output to json object
+        $res = explode("\n", $res);
+        $json = array();
+        if($res[0] == "0"){
+            echo 0;
+        } else {
+            echo 1;
+        }
     });
 
     $app->route($_GET["action"]);
