@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.css">
     <link rel="stylesheet" href="style.css">
-    <title>Microwave Time</title>
+    <title>EasyReheat</title>
     <meta name="viewport" content="width=device-width">
-
     <script src="https://ssl.jackzh.com/file/js/jquery/jquery-2.2.2.min.js"></script>
     <script type="text/javascript" src="sdk.js"></script>
     <script type="text/javascript" src="index.js"></script>
@@ -17,29 +15,29 @@
   </head>
 
   <body class="container-fluid" id="container">
+      <!--Header logo-->
       <div class="header">
           <img src="images/logo.png" height="50" /> EasyReheat
       </div>
-    <input id="input" type="file" onchange="change()" capture="camera" accept="image/*">
-    <div id="content">
-      <div id="block1"></div>
-      <div id="block2">
-        <i class="fa fa-arrow-circle-up icon-large button" aria-hidden="true" onclick="upload()"></i>
-        <p>Upload a picture of your food</p>
+      <input id="input" type="file" onchange="change()" capture="camera" accept="image/*">
+      <div id="content">
+          <!--Primary content container-->
+          <div id="block1"></div>
+          <div id="block2">
+              <i class="fa fa-arrow-circle-up icon-large button" aria-hidden="true" onclick="upload()"></i>
+              <p>Don't know how long it takes to microwave? Upload a picture of your dish here</p>
+          </div>
+          <!--Result container-->
+          <div id="block3"></div>
+          <!--Loading icon-->
+          <div id="loading-block">
+              <i class="fa fa-spin fa-spinner"></i>
+          </div>
+          <!--Copyright Notice-->
+          <div class="footer">
+              Copyright Anurudran C., Evan W., Ian W., Jun Z. All Rights Reserved<br>
+              Information provided on this website is for entertainment purposes only.
+          </div>
       </div>
-      <div id="block3"></div>
-      <div id="loading-block">
-          <i class="fa fa-spin fa-spinner"></i>
-      </div>
-      <div class="footer">
-          Copyright Anurudran C., Evan W., Ian W., Jun Z. All Rights Reserved<br>
-  Information provided on this website is for entertainment purposes only.
-      </div>
-    </div>
   </body>
-
-  <footer>
-
-  </footer>
-
 </html>
