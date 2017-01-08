@@ -2,29 +2,34 @@ function upload(){
   document.getElementById("input").click();
 }
 
-function test(){
+function change(){
+  $(".button").addClass('animated bounceOut');
   // get rid of old page content
-  document.getElementById("block2").style.display = "none";
+  setTimeout(function(){
 
-  // send the image to the server when the user inputs a file
-  image_to_base64("input", function(base64){
+    document.getElementById("block2").style.display = "none";
 
-    // process the server response and display it
-    food = new MicrowaveFood(base64, function(food){
+    // send the image to the server when the user inputs a file
+    image_to_base64("input", function(base64){
 
-      new_html="";
+      // process the server response and display it
+      food = new MicrowaveFood(base64, function(food){
 
-      if(food !== false){
-        new_html = "Microwave Time: " + food.how_long().toString() + "\n" +
-              "Cal: " + food.how_much_cal().toString();
-      } else {
-        new_html = "Failed to upload image";
-      }
+        new_html="";
 
-      document.getElementById("block3").innerHTML = new_html;
+        if(food !== false){
+          new_html = "Microwave Time: " + food.how_long().toString() + "\n" +
+                "Cal: " + food.how_much_cal().toString();
+        } else {
+          new_html = "Failed to upload image";
+        }
+
+        document.getElementById("block3").innerHTML = new_html;
+
+      });
 
     });
 
-  });
+  }, 500);
 
 }
