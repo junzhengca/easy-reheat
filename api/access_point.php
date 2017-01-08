@@ -35,6 +35,7 @@
         $targetFile = gen_uuid();
         if(base64_to_image($_POST["file"], $targetDir . $targetFile)){
             $res = shell_exec($config["python_path"] . " ../checking.py 'http://52.229.117.35/microwave-time/api/" . $targetDir . $targetFile . "' 2>&1");
+            echo $res;
             echo $targetFile;
             // Parse python output to json object
             $res = explode("\n", $res);
