@@ -48,7 +48,7 @@
                 if($res[$i] == ""){
                     continue;
                 }
-                $arr = preg_split("/\s+(?=\S*+$)/",$res[$i]);
+                $arr = explode("/",$res[$i]);
                 array_push($json["score"], $arr);
             }
             file_put_contents($targetDir . $targetFile . ".json", json_encode($json));
