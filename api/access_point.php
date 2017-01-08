@@ -92,9 +92,9 @@
         $image_score = $image_meta["score"];
         foreach($image_score as $element){
             if($train_method === "up"){
-                $food_cook_times[$element[0]] += $element[1] * 3;
-            } else {
                 $food_cook_times[$element[0]] -= $element[1] * 3;
+            } else {
+                $food_cook_times[$element[0]] += $element[1] * 3;
             }
         }
         file_put_contents("food_cook_time.json", json_encode($food_cook_times));
