@@ -1,3 +1,5 @@
+import os.path
+home_folder = os.path.expanduser('~')
 """
 Microwave-time
 
