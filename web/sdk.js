@@ -13,7 +13,7 @@ function MicrowaveFood(base64, callback){
     // Get tags
     this.get_tags = function(callback){
         $.ajax({
-            url:"../api/images/" + this.image_url + ".json",
+            url:"../api/images/" + this.img_url + ".json",
             type:"GET",
             dataType:"json"
             success:function(data){
