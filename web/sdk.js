@@ -15,10 +15,9 @@ function MicrowaveFood(base64, callback){
         $.ajax({
             url:"../api/images/" + this.img_url + ".json",
             type:"GET",
-            dataType:"json",
             success:function(data){
                 console.log(data);
-                callback(data.score);
+                callback(JSON.parse(data).score);
             },
             error:function(data){
                 callback(false);
