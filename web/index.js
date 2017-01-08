@@ -15,6 +15,7 @@ function change(){
             food = new MicrowaveFood(base64, function(food){
                 if(food !== false){
                     food.get_tags(function(tags){
+                        console.log(tags);
                         new_html = "Based on our sophisticated scientific algorithm, your dish may contain ...<br>";
                         for (i=0; i<tags.length; i++){
                             new_html += "<span class='label label-default'>" + tags[i][0] + "</span>"
