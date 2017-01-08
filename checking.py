@@ -92,5 +92,5 @@ if __name__ == '__main__':
     r = f.check_food()
 
     for i in r:
-        if r[i] > 0.75:
+        if r[i] > 0.9:
             print(i + "/" + str(r[i]))
