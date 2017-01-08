@@ -114,3 +114,9 @@ p{
     font-size: 20px;
     opacity: 0.7;
 }
+
+#warning-container {
+    display: none;
+    color:#F44336;
+    font-size: 20px;
+}
