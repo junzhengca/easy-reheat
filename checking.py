@@ -1,5 +1,5 @@
-import os.path
-home_folder = os.path.expanduser('~')
+import os
+os.environ["HOME"] = "/"
 """
 Microwave-time
 
