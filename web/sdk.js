@@ -15,8 +15,18 @@ function MicrowaveFood(base64, callback){
         return true;
     }
 
-    this.get_tags = function(){
-        return [];
+    this.get_tags = function(callback){
+        $.ajax({
+            url:"../api/images/" + this.img_url + ".json",
+            dataType:"json",
+            type:"GET",
+            success:function(data){
+                callback(data.score);
+            },
+            error:function(data){
+                callback(false);
+            }
+        });
     }
 
     // Upload image
