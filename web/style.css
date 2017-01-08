@@ -1,3 +1,7 @@
+body {
+    background-color: #FF9800;
+}
+
 p{
   font-size: 5vh;
 }
@@ -10,7 +14,6 @@ p{
 
 #content{
   height:100%;
-  background-color: #FF9800;
   color: white;
   text-align: center;
   background-image: url(images/microwave.png);
@@ -69,5 +72,5 @@ p{
 }
 
 .mic-time {
-    font-size:30vh;
+    font-size:7vh;
 }
