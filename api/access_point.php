@@ -45,6 +45,9 @@
             }
             $json["score"] = array();
             for ($i = 1; $i <= max(array_keys($res)); $i++){
+                if($res[$i] == ""){
+                    continue;
+                }
                 $arr = preg_split("/\s+(?=\S*+$)/",$res[$i]);
                 array_push($json["score"], $arr);
             }
