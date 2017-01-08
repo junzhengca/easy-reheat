@@ -76,6 +76,19 @@ p{
     font-size:7vh;
 }
 
+.vote-button {
+    border-radius:100px;
+    width:80%;
+    color:white;
+    background-color: rgba(0,0,0,0.2);
+    transition: all ease 0.3s;
+}
+
+.vote-button:hover {
+    background-color: rgba(0,0,0,0.4);
+    transition: all ease 0.3s;
+}
+
 #block3 img {
     max-width: 50vw;
     max-height:50vh;

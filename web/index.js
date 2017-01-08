@@ -23,7 +23,10 @@ function change(){
                         for (i=0; i<data.score.length; i++){
                             new_html += "<span class='label label-default'>" + data.score[i][0] + "</span>"
                         }
-                        new_html += "<br><br><span class='mic-time'>Microwave Time: " + data.total_cook_time + " Seconds.</span><br>" + "Calories: " + data.total_cal;
+                        new_html += "<br><br><span class='mic-time'>Microwave Time: " + data.total_cook_time + " Seconds.</span><br>" + "Calories: " + data.total_cal + "<br><br>";
+                        new_html += "<div class='row'><div class='col-md-4'><button class='vote-button'>Too Cold</button></div>"
+                        new_html += "<div class='col-md-4'><button class='vote-button'>Perfact</button></div>"
+                        new_html += "<div class='col-md-4'><button class='vote-button'>Too Hot</button></div></div>"
                         document.getElementById("block3").innerHTML = new_html;
                     });
                 } else {
