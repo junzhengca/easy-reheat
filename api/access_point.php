@@ -84,6 +84,22 @@
         }
     });
 
+    $app->add("train", function(){
+        $food_cook_times = json_decode(file_get_contents("food_cook_time.json"),true);
+        $image_uuid = $_GET["uuid"];
+        $train_method = $_GET["method"]; //up or down
+        $image_meta = json_decode(file_get_contents("images/" . $image_uuid . ".json"), true);
+        $image_score = $image_meta["score"];
+        foreach($image_score as $element){
+            if($train_method === "up"){
+                $food_cook_times[$element[0]] += $element[1] * 3;
+            } else {
+                $food_cook_times[$element[0]] -= $element[1] * 3;
+            }
+        }
+        file_put_contents("food_cook_time.json", json_encode($food_cook_times));
+    });
+
     // Score an image, output cook time
     $app->add("score_image", function(){
             $res = shell_exec($config["python_path"] . " ../checking.py '" . $_GET["url"] . "' 2>&1");
