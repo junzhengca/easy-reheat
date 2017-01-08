@@ -36,6 +36,8 @@ p{
 
 #block2{
   position:relative;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 #block3{
@@ -61,10 +63,13 @@ p{
 .button{
   font-size: 30vh;
   text-shadow: rgba(0,0,0,0.2) 0 0 20px;
+  transition: all ease 0.3s;
 }
 
 .button:hover{
   color: #DDDDDD;
+  font-size: 35vh;
+  transition: all ease 0.3s;
 }
 
 .button:active{
