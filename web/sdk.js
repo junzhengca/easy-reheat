@@ -25,7 +25,7 @@ function MicrowaveFood(base64, callback){
             type:"GET",
             success:function(data){
                 console.log(data);
-                callback(data.score);
+                callback(data);
             },
             error:function(data){
                 callback(false);

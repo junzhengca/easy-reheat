@@ -15,13 +15,13 @@ function change(){
             food = new MicrowaveFood(base64, function(food){
                 $("#loading-block").fadeOut();
                 if(food !== false){
-                    food.get_tags(function(tags){
-                        console.log(tags);
+                    food.get_tags(function(data){
+                        console.log(data.score);
                         new_html = "Based on our sophisticated scientific algorithm, your dish may contain ...<br>";
-                        for (i=0; i<tags.length; i++){
+                        for (i=0; i<data.score.length; i++){
                             new_html += "<span class='label label-default'>" + tags[i][0] + "</span>"
                         }
-                        new_html += "<br><br>Microwave Time: " + food.how_long().toString() + "<br>" + "Cal: " + food.how_much_cal().toString();
+                        new_html += "<br><br>Microwave Time: " + data.total_cook_time + "<br>" + "Cal: " + food.how_much_cal().toString();
                         document.getElementById("block3").innerHTML = new_html;
                     });
                 } else {

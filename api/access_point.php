@@ -54,6 +54,16 @@
                 $arr = explode("/",$res[$i]);
                 array_push($json["score"], $arr);
             }
+            $food_cook_times = json_decode(file_get_contents("food_cook_time.json"),true);
+            $total_time = 0;
+            foreach($json["score"] as $food){
+                if(empty($food_cook_times[$food[0]])){
+                    $total_time += 90;
+                } else {
+                    $total_time += $food_cook_times[$food[0]] * $food[1];
+                }
+            }
+            $json["total_cook_time"] = $total_time;
             file_put_contents($targetDir . $targetFile . ".json", json_encode($json));
         } else {
             echo "500";
