@@ -6,13 +6,14 @@ function change(){
     $(".button").addClass('animated bounceOut');
     // get rid of old page content
     setTimeout(function(){
-
+        $("#loading-block").fadeIn();
         document.getElementById("block2").style.display = "none";
 
         // send the image to the server when the user inputs a file
         image_to_base64("input", function(base64){
             // process the server response and display it
             food = new MicrowaveFood(base64, function(food){
+                $("#loading-block").fadeOut();
                 if(food !== false){
                     food.get_tags(function(tags){
                         console.log(tags);

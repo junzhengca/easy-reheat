@@ -42,6 +42,18 @@ p{
   display:none;
 }
 
+#loading-block {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    font-size: 30vh;
+    text-shadow: rgba(0,0,0,0.3) 0 0 10px;
+    line-height: 100vh;
+    display: none;
+}
+
 .button{
   font-size: 30vh;
   text-shadow: rgba(0,0,0,0.2) 0 0 20px;
