@@ -23,7 +23,7 @@ function change(){
                         for (i=0; i<data.score.length; i++){
                             new_html += "<span class='label label-default'>" + data.score[i][0] + "</span>"
                         }
-                        new_html += "<br><br><span class='mic-time'>Microwave Time: " + data.total_cook_time + " Seconds.</span><br>" + "Calories: " + data.total_cal + "<br><br>";
+                        new_html += "<br><br><span class='mic-time'>Suggested Microwave Time: " + data.total_cook_time + " Seconds.</span><br>" + "Appox. Calories: " + data.total_cal + "<br><br>";
                         new_html += "<div class='row'><div class='col-md-4'><button onclick='feedback();' class='vote-button'><i class='fa fa-snowflake-o' aria-hidden='true'></i> Too Cold</button></div>"
                         new_html += "<div class='col-md-4'><button onclick='feedback();' class='vote-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i> Perfact</button></div>"
                         new_html += "<div class='col-md-4'><button onclick='feedback();' class='vote-button'><i class='fa fa-fire' aria-hidden='true'></i> Too Hot</button></div></div>"
