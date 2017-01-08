@@ -77,10 +77,10 @@ p{
 }
 
 .vote-button {
-    border-radius:100px;
+    border-radius:20px;
     width:70%;
     color:white;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(255,255,255,0.1);
     height:100px;
     border:none;
     box-shadow: rgba(0,0,0,0.3) 0 0 10px;
@@ -98,4 +98,11 @@ p{
     max-height:50vh;
     border-radius: 10px;
     box-shadow: rgba(0,0,0,0.3) 0 0 10px;
+}
+
+.footer {
+    opacity: 0.5;
+    text-align: center;
+    padding: 30px;
+    color: white;
 }
