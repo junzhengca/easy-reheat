@@ -64,7 +64,7 @@ class Food:
         @type self: Food
         @rtype: dict
         """
-        app = ClarifaiApp()
+        app = ClarifaiApp("Hr3f_TNV3d26DFexmloW62wVwZc2Cc4MoTkN7d7P", "vqmlJn5xUE1ZhmDcyw9nrDNMqTNq7NKrgue9YPxm")
         fod = app.models.get('food-items-v1.0')
         image = ClImage(url=self.url_address)
 
