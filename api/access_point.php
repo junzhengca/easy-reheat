@@ -79,7 +79,42 @@
     });
 
     $app->add("score_image", function(){
-
+            $res = shell_exec($config["python_path"] . " ../checking.py '" . $_GET["url"] . "' 2>&1");
+            // Parse python output to json object
+            $res = explode("\n", $res);
+            $json = array();
+            if($res[0] == "0"){
+                $json["warning"] = false;
+            } else {
+                $json["warning"] = true;
+            }
+            $json["score"] = array();
+            for ($i = 1; $i <= max(array_keys($res)); $i++){
+                if($res[$i] == ""){
+                    continue;
+                }
+                $arr = explode("/",$res[$i]);
+                array_push($json["score"], $arr);
+            }
+            $food_cook_times = json_decode(file_get_contents("food_cook_time.json"),true);
+            $food_cal = json_decode(file_get_contents("food_cal.json"),true);
+            $total_time = 0;
+            $total_cal = 0;
+            foreach($json["score"] as $food){
+                if(empty($food_cook_times[$food[0]])){
+                    $total_time += 90;
+                } else {
+                    $total_time += $food_cook_times[$food[0]] * $food[1];
+                }
+                if(empty($food_cal[$food[0]])){
+                    $total_cal += 500;
+                } else {
+                    $total_cal += $food_cal[$food[0]] * $food[1];
+                }
+            }
+            $json["total_cook_time"] = floor($total_time / (max(array_keys($json["score"])) + 1));
+            $json["total_cal"] = floor($total_cal / (max(array_keys($json["score"])) + 1));
+            echo json_encode($json);
     });
 
     $app->add("food_info", function(){
