@@ -19,7 +19,7 @@ function change(){
                         console.log(data.score);
                         new_html = "Based on our sophisticated scientific algorithm, your dish may contain ...<br>";
                         for (i=0; i<data.score.length; i++){
-                            new_html += "<span class='label label-default'>" + tags[i][0] + "</span>"
+                            new_html += "<span class='label label-default'>" + data.score[i][0] + "</span>"
                         }
                         new_html += "<br><br>Microwave Time: " + data.total_cook_time + "<br>" + "Cal: " + food.how_much_cal().toString();
                         document.getElementById("block3").innerHTML = new_html;
