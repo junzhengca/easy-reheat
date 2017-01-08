@@ -18,7 +18,7 @@ function change(){
                     var food = food;
                     food.get_tags(function(data){
                         console.log(data.score);
-                        new_html = "<img src='../api/images/" + food.img_url + "' />";
+                        new_html = "<img src='../api/images/" + food.img_url + "' /><br><br>";
                         new_html += "Based on our sophisticated scientific algorithm, your dish may contain ...<br>";
                         for (i=0; i<data.score.length; i++){
                             new_html += "<span class='label label-default'>" + data.score[i][0] + "</span>"
