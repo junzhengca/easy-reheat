@@ -24,7 +24,7 @@
      * If failed, function will return false.
      */
     function base64_to_image($base64_string, $output_file) {
-        if(true){ //base64_get_extension($base64_string)
+        if(!imagecreatefromstring(base64_decode($base64_string))){ //base64_get_extension($base64_string)
             $ifp = fopen($output_file, "wb");
             $data = explode(',', $base64_string);
             fwrite($ifp, base64_decode($data[1]));
