@@ -3,7 +3,10 @@
     include "include/app.php";
     include "config.php";
 
-    // Helper function to generate a v4 UUID
+    /* () -> string
+     * Generate a random v4 UUID.
+     * This function is secure according to standards.
+     */
     function gen_uuid() {
         return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
             mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
@@ -14,7 +17,12 @@
         );
     }
 
-    // Convert base64 string to image file
+    /* (string, string) -> boolean
+     * Convert a base64 string to an image file.
+     * The function will save the image file to the location spcified in
+     * $output_file.
+     * If failed, function will return false.
+     */
     function base64_to_image($base64_string, $output_file) {
         if(true){ //base64_get_extension($base64_string)
             $ifp = fopen($output_file, "wb");
@@ -148,5 +156,6 @@
         }
     });
 
+    // Invoke route events
     $app->route($_GET["action"]);
 ?>
