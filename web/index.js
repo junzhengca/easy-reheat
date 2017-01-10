@@ -30,9 +30,9 @@ function change(){
                         for (i=0; i<data.score.length; i++){
                             new_html += "<span class='label label-default'>" + data.score[i][0] + "</span>"
                         }
-                        new_html += "<br><br><div class='row'><div class='col-md-4'><button onclick='feedback(1);' class='vote-button'><i class='fa fa-snowflake-o' aria-hidden='true'></i> Too Cold</button></div>"
-                        new_html += "<div class='col-md-4'><button onclick='feedback(2);' class='vote-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i> Perfect</button></div>"
-                        new_html += "<div class='col-md-4'><button onclick='feedback(3);' class='vote-button'><i class='fa fa-fire' aria-hidden='true'></i> Too Hot</button></div></div>"
+                        new_html += "<br><br><div class='row'><div class='col-md-4 feedback'><button onclick='feedback(1);' class='vote-button'><i class='fa fa-snowflake-o' aria-hidden='true'></i> Too Cold</button></div>"
+                        new_html += "<div class='col-md-4 feedback'><button onclick='feedback(2);' class='vote-button'><i class='fa fa-thumbs-up' aria-hidden='true'></i> Perfect</button></div>"
+                        new_html += "<div class='col-md-4 feedback'><button onclick='feedback(3);' class='vote-button'><i class='fa fa-fire' aria-hidden='true'></i> Too Hot</button></div></div>"
                         document.getElementById("block3").innerHTML = new_html;
                     });
                 } else {
@@ -66,8 +66,15 @@ function feedback(action){
 
 
 $(function(){
+  // event trigger when the user presses a feedback button
     $(".vote-button").click(function(){
-        alert("Thanks for your feedback!");
+      // remove the buttons
+      $(".feedback").remove();
+      var new_html = "<p class=\"animated bounceIn\">Thank you for your feedback!</p>";
+      document.getElementById("block3").innerHTML = new_html;
+      // reload the page after a short delay
+      setTimeout(function(){
         window.location.reload();
+      }, 800);
     });
 })
