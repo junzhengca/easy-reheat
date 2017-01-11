@@ -11,4 +11,6 @@
 #else
 #    echo "=> Using an existing volume of MySQL"
 #fi
+/usr/sbin/apachectl -DFOREGROUND
+
 tail -f /dev/null
