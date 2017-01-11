@@ -1,16 +1,1 @@
-{
-    "pizza":60,
-    "vegetables":120,
-    "steak":70,
-    "pepperoni":60,
-    "salami":30,
-    "cheese":15,
-    "frozen pizza":90,
-    "dough":50,
-    "crust":60,
-    "tomato":30,
-    "ham":20,
-    "mozzarella":50,
-    "sauce":50,
-    "gyoza":40
-}
+{"pizza":60,"vegetables":120,"steak":70,"pepperoni":60,"salami":30,"cheese":15,"frozen pizza":90,"dough":50,"crust":60,"tomato":30,"ham":20,"mozzarella":50,"sauce":50,"gyoza":40,"dish":90,"soup":90,"stew":90}

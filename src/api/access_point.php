@@ -46,26 +46,35 @@
         $targetFile = gen_uuid();
         if(base64_to_image($_POST["file"], $targetDir . $targetFile)){
             // Create a new SDK instance
-            $computer_vision_api = new \MicrosoftCognitiveServices\ComputerVision(\EasyReheat\ApiConfig["cv_key"]);
-            $res = shell_exec($config["python_path"] . " ../checking.py 'http://52.229.117.35/microwave-time/api/" . $targetDir . $targetFile . "' 2>&1");
+            $computer_vision_api = new \MicrosoftCognitiveServices\ComputerVision(\EasyReheat\ApiConfig::$cv_key);
+            $data = explode(',', $_POST["file"]);
+            $image_bin = base64_decode($data[1]);
+            $result = $computer_vision_api->analyze(
+                \MicrosoftCognitiveServices\CVVisualFeatures::$tags,
+                \MicrosoftCognitiveServices\CVDetails::$none,
+                \MicrosoftCognitiveServices\CVLanguage::$english,
+                $image_bin
+            );
+            // $res = shell_exec($config["python_path"] . " ../checking.py 'http://52.229.117.35/microwave-time/api/" . $targetDir . $targetFile . "' 2>&1");
             //echo $res;
             echo $targetFile;
+            //print_r($result);
             // Parse python output to json object
+            /*
             $res = explode("\n", $res);
-            $json = array();
             // Check if food is microwaveable
             if($res[0] == "0"){
                 $json["warning"] = false;
             } else {
                 $json["warning"] = true;
             }
+            */
+            $json = array();
             $json["score"] = array();
-            for ($i = 1; $i <= max(array_keys($res)); $i++){
-                if($res[$i] == ""){
-                    continue;
+            for ($i = 0; $i <= max(array_keys($result["tags"])); $i++){
+                if (isset($result["tags"][$i]["hint"]) && $result["tags"][$i]["hint"] == "food"){
+                    array_push($json["score"], array($result["tags"][$i]["name"], $result["tags"][$i]["confidence"]));
                 }
-                $arr = explode("/",$res[$i]);
-                array_push($json["score"], $arr);
             }
             // Calculate cook time and calorie count
             $food_cook_times = json_decode(file_get_contents("food_cook_time.json"),true);

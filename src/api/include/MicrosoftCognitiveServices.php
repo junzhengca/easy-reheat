@@ -30,7 +30,7 @@
             $this->key = $key;
         }
 
-        /* (CVVisualFeatures, CVDetails, CVLanguage, string)
+        /* (CVVisualFeatures, CVDetails, CVLanguage, string or binary)
          * Analyze an image using Microsoft Cognitive Services
          */
         function analyze($visual_features, $details, $language, $image_url){
@@ -51,20 +51,25 @@
             ltrim($query, '&');
             $url .= "?" . $query;
             //set the url, number of POST vars, POST data
-            echo $url;
+            // echo $url;
             curl_setopt($ch,CURLOPT_URL, $url);
             curl_setopt($ch,CURLOPT_POST, 1);
-            $request_body = json_encode(array(
-                "url"=>$image_url
-            ));
-            curl_setopt($ch,CURLOPT_POSTFIELDS, $request_body);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            if(ctype_print($filename)){
+                curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+                $request_body = json_encode(array(
+                    "url"=>$image_url
+                ));
+            } else {
+                curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/octet-stream'));
+                $request_body = $image_url;
+            }
+            curl_setopt($ch,CURLOPT_POSTFIELDS, $request_body);
             //execute post
             $result = curl_exec($ch);
             //close connection
             curl_close($ch);
-            return json_encode($result, true);
+            return json_decode($result, true);
         }
     }
 ?>

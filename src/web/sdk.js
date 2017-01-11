@@ -42,10 +42,12 @@ function MicrowaveFood(base64, callback){
         },
         type:"POST",
         success:function(data){
+            consoel.log(data);
             self.img_url = data;
             callback(self);
         },
         error:function(data){
+            console.log(data);
             callback(false);
         }
     });
