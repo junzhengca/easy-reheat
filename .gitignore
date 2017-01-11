@@ -1,3 +1,3 @@
-api/images/*
+src/api/images/*
 bot/node_modules/
 api/food_cook_time.json
