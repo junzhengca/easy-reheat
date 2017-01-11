@@ -55,7 +55,7 @@
             curl_setopt($ch,CURLOPT_URL, $url);
             curl_setopt($ch,CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            if(ctype_print($filename)){
+            if(ctype_print($image_url)){
                 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
                 $request_body = json_encode(array(
                     "url"=>$image_url

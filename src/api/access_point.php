@@ -18,6 +18,9 @@
             mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
         );
     }
+    set_error_handler(function ($no, $msg, $file, $line) {
+        throw new ErrorException($msg, 0, $no, $file, $line);
+    });
 
     /* (string, string) -> boolean
      * Convert a base64 string to an image file.
@@ -26,7 +29,7 @@
      * If failed, function will return false.
      */
     function base64_to_image($base64_string, $output_file) {
-        $data = explode(',', $base64_string);
+        $data = explode(',', $base64_string, 2);
         if(imagecreatefromstring(base64_decode($data[1]))){ //base64_get_extension($base64_string)
             $ifp = fopen($output_file, "wb");
             fwrite($ifp, base64_decode($data[1]));

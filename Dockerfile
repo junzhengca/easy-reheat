@@ -9,6 +9,8 @@ RUN apt-get update && \
   apt-get install -y apache2 php libapache2-mod-php php-mcrypt php-mysql git
 
 RUN apt-get install -y php7.0-curl
+RUN apt-get install -y php7.0-gd
+RUN apt-get install -y php7.0-common
 
 # RUN apt-get install -y mysql-server
 
