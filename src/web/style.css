@@ -4,11 +4,11 @@ body {
 }
 
 p{
-  font-size: 5vh;
+  font-size: 20px;
 }
 
 #container{
-  height:100vh;
+  height:100%;
   width: 100%;
   padding: 0px;
 }
@@ -31,13 +31,13 @@ p{
 }
 
 #block1{
-  height:10vh;
+  height:100px;
 }
 
 #block2{
   position:relative;
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 #block3{
@@ -54,31 +54,31 @@ p{
     left:0;
     width:100%;
     height:100%;
-    font-size: 30vh;
+    font-size: 100px;
     text-shadow: rgba(0,0,0,0.3) 0 0 10px;
     line-height: 100vh;
     display: none;
 }
 
 .button{
-  font-size: 30vh;
+  font-size: 200px;
   text-shadow: rgba(0,0,0,0.2) 0 0 20px;
   transition: all ease 0.3s;
 }
 
 .button:hover{
   color: #DDDDDD;
-  font-size: 35vh;
+  font-size: 220px;
   transition: all ease 0.3s;
 }
 
 .button:active{
   color: #BBBBBB;
-  font-size:31vh;
+  font-size:240px;
 }
 
 .mic-time {
-    font-size:7vh;
+    font-size:14px;
 }
 
 .vote-button {
@@ -99,8 +99,8 @@ p{
 }
 
 #block3 img {
-    max-width: 50vw;
-    max-height:50vh;
+    max-width: 50%;
+    max-height:50%;
     border-radius: 10px;
     box-shadow: rgba(0,0,0,0.3) 0 0 10px;
 }
@@ -124,4 +124,14 @@ p{
     display: none;
     color:#F44336;
     font-size: 20px;
+}
+
+@media (max-width: 600px){
+  #block2{
+    padding-left:10px;
+    padding-right:10px;
+  }
+  #block1{
+    height:50px;
+  }
 }
